@@ -33,15 +33,16 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtMessages = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblMessages = new System.Windows.Forms.Label();
-            this.llClear = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
+            this.messagesControl1 = new Corax.Core.Client.Controls.MessagesControl();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tripToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.standardTripToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.messagingTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlViewPort = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -51,21 +52,19 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tableLayoutPanel1.Controls.Add(this.menuStrip1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtMessages, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.label2, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.messagesControl1, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.pnlViewPort, 1, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 6;
+            this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(621, 604);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(634, 611);
             this.tableLayoutPanel1.TabIndex = 10;
             // 
             // menuStrip1
@@ -73,10 +72,11 @@
             this.tableLayoutPanel1.SetColumnSpan(this.menuStrip1, 3);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
+            this.viewToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(621, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(634, 24);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -101,60 +101,6 @@
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
-            // txtMessages
-            // 
-            this.txtMessages.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtMessages.Location = new System.Drawing.Point(13, 389);
-            this.txtMessages.Multiline = true;
-            this.txtMessages.Name = "txtMessages";
-            this.txtMessages.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtMessages.Size = new System.Drawing.Size(595, 201);
-            this.txtMessages.TabIndex = 4;
-            // 
-            // panel1
-            // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(13, 58);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(595, 305);
-            this.panel1.TabIndex = 5;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.lblMessages, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.llClear, 1, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(13, 369);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(595, 14);
-            this.tableLayoutPanel2.TabIndex = 6;
-            // 
-            // lblMessages
-            // 
-            this.lblMessages.AutoSize = true;
-            this.lblMessages.Location = new System.Drawing.Point(3, 0);
-            this.lblMessages.Name = "lblMessages";
-            this.lblMessages.Size = new System.Drawing.Size(55, 13);
-            this.lblMessages.TabIndex = 0;
-            this.lblMessages.Text = "Messages";
-            // 
-            // llClear
-            // 
-            this.llClear.AutoSize = true;
-            this.llClear.Dock = System.Windows.Forms.DockStyle.Right;
-            this.llClear.Location = new System.Drawing.Point(561, 0);
-            this.llClear.Name = "llClear";
-            this.llClear.Size = new System.Drawing.Size(31, 14);
-            this.llClear.TabIndex = 1;
-            this.llClear.TabStop = true;
-            this.llClear.Text = "Clear";
-            this.llClear.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llClear_LinkClicked);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -166,11 +112,67 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "Corax: Core";
             // 
+            // messagesControl1
+            // 
+            this.messagesControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.messagesControl1.Location = new System.Drawing.Point(13, 385);
+            this.messagesControl1.Name = "messagesControl1";
+            this.messagesControl1.Size = new System.Drawing.Size(608, 212);
+            this.messagesControl1.TabIndex = 10;
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tripToolStripMenuItem,
+            this.testToolStripMenuItem});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
+            // tripToolStripMenuItem
+            // 
+            this.tripToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.standardTripToolStripMenuItem});
+            this.tripToolStripMenuItem.Name = "tripToolStripMenuItem";
+            this.tripToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tripToolStripMenuItem.Text = "Trip";
+            // 
+            // standardTripToolStripMenuItem
+            // 
+            this.standardTripToolStripMenuItem.Name = "standardTripToolStripMenuItem";
+            this.standardTripToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.standardTripToolStripMenuItem.Text = "Standard Trip";
+            this.standardTripToolStripMenuItem.Click += new System.EventHandler(this.standardTripToolStripMenuItem_Click);
+            // 
+            // testToolStripMenuItem
+            // 
+            this.testToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.messagingTestToolStripMenuItem});
+            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.testToolStripMenuItem.Text = "Test";
+            // 
+            // messagingTestToolStripMenuItem
+            // 
+            this.messagingTestToolStripMenuItem.Name = "messagingTestToolStripMenuItem";
+            this.messagingTestToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.messagingTestToolStripMenuItem.Text = "Messaging Test";
+            this.messagingTestToolStripMenuItem.Click += new System.EventHandler(this.messagingTestToolStripMenuItem_Click);
+            // 
+            // pnlViewPort
+            // 
+            this.pnlViewPort.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlViewPort.Location = new System.Drawing.Point(10, 55);
+            this.pnlViewPort.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlViewPort.Name = "pnlViewPort";
+            this.pnlViewPort.Size = new System.Drawing.Size(614, 327);
+            this.pnlViewPort.TabIndex = 11;
+            // 
             // Start
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(621, 604);
+            this.ClientSize = new System.Drawing.Size(634, 611);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Start";
             this.Text = "Corax";
@@ -179,24 +181,24 @@
             this.tableLayoutPanel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Label lblMessages;
-        private System.Windows.Forms.LinkLabel llClear;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.TextBox txtMessages;
         private System.Windows.Forms.Label label2;
+        private Controls.MessagesControl messagesControl1;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tripToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem standardTripToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem messagingTestToolStripMenuItem;
+        private System.Windows.Forms.Panel pnlViewPort;
     }
 }
 

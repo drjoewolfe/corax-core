@@ -46,6 +46,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\IMessageSink.cs" />
+    <Compile Include="Controls\Common\MessagesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\MessagesControl.Designer.cs">
+      <DependentUpon>MessagesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Common\TripControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\TripControl.Designer.cs">
+      <DependentUpon>TripControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Common\UserControlBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Test\MessagingTest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Test\MessagingTest.Designer.cs">
+      <DependentUpon>MessagingTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Start.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +76,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\Common\MessagesControl.resx">
+      <DependentUpon>MessagesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Common\TripControl.resx">
+      <DependentUpon>TripControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Test\MessagingTest.resx">
+      <DependentUpon>MessagingTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

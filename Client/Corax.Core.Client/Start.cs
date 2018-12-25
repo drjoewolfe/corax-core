@@ -1,43 +1,69 @@
-﻿using System;
+﻿using Corax.Core.Client.Controls;
+using Corax.Core.Client.Controls.Test;
+using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Corax.Core.Client
 {
     public partial class Start : Form
     {
+        Dictionary<Type, UserControlBase> loadedControls;
+
         public Start()
         {
             InitializeComponent();
+            loadedControls = new Dictionary<Type, UserControlBase>();
         }
 
         private void Start_Load(object sender, EventArgs e)
         {
             
         }
-        
-        private void llClear_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+
+        private void loadControl(Type controlType)
         {
-            ClearMessages();
+            if (!controlType.IsSubclassOf(typeof(UserControlBase)))
+            {
+                return;
+            }
+
+            if (loadedControls.ContainsKey(controlType))
+            {
+                var control = loadedControls[controlType];
+                showControl(control);
+            }
+            else
+            {
+                var control = Activator.CreateInstance(controlType) as UserControlBase;
+                loadedControls.Add(controlType, control);
+                showControl(control);
+            }
         }
-        
+
+        private void showControl(UserControlBase control)
+        {
+            pnlViewPort.Controls.Clear();
+            pnlViewPort.Controls.Add(control);
+        }
+
+        #region Menu Strip
+
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void AddMessage(string message)
+        private void standardTripToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            txtMessages.Invoke((MethodInvoker)delegate { txtMessages.AppendText(message + Environment.NewLine); });
+            loadControl(typeof(TripControl));
         }
 
-        private void AddMessage()
+        private void messagingTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            txtMessages.Invoke((MethodInvoker)delegate { txtMessages.AppendText(Environment.NewLine); });
+            loadControl(typeof(MessagingTest));
         }
-        
-        private void ClearMessages()
-        {
-            txtMessages.Invoke((MethodInvoker)delegate { txtMessages.Text = ""; });
-        }
+
+        #endregion
     }
 }
